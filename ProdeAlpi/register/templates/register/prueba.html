@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %} HOME {% endblock %}
+
+{% block background %}{% static 'core/img/alpi.jpg' %}{% endblock %}
+
+{% block headers %}
+
+    
+    <html>
+        <strong>Hola</strong>, <em>{{ nombre }}  </em>
+        Hiciste {{ cursos }} cursos y ahora estás haciendo el curso de
+        {{ curso_actual.nombre }} en el turno {{ curso_actual.turno }}.
+        Tu primer curso fue {{ cursos_anteriores.0 }}.
+
+
+        <h1>
+            {% if cursos > 0 %}
+                Hiciste {{ cursos }} cursos.
+            {% else %}
+                No hiciste ningun curso todavia.
+            {% endif %}        
+        </h1>
+
+        <h1>
+            <ul>
+                {% for alumno in alumnos %}
+                    <li> {{ alumno }}</li>
+                {% endfor %}
+            </ul>
+        </h1>
+
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

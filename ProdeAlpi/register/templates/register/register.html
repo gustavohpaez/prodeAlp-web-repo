@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %} Register {% endblock %}
+
+{% block background %}{% static 'core/img/alpi.jpg' %}{% endblock %}
+
+{% block headers %}
+    <h1> Registro de nuevos usuarios </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Registrarse">
+    </form>
+{% endblock %}
